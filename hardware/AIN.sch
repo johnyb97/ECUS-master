@@ -1,0 +1,197 @@
+EESchema Schematic File Version 4
+LIBS:ECUS-FSE-07-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 8
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR0172
+U 1 1 5B2030F8
+P 5200 2300
+AR Path="/5B202D5B/5B2030F8" Ref="#PWR0172"  Part="1" 
+AR Path="/5B244EA6/5B2030F8" Ref="#PWR0173"  Part="1" 
+F 0 "#PWR0173" H 5200 2050 50  0001 C CNN
+F 1 "GND" H 5200 2150 50  0000 C CNN
+F 2 "" H 5200 2300 50  0001 C CNN
+F 3 "" H 5200 2300 50  0001 C CNN
+	1    5200 2300
+	1    0    0    -1  
+$EndComp
+Text HLabel 3850 2150 0    60   Output ~ 0
+AIN
+Text HLabel 5550 2050 0    60   Input ~ 0
+PWR
+Wire Wire Line
+	5200 2300 5200 2250
+Wire Wire Line
+	5200 2250 5850 2250
+$Comp
+L Device:R R21
+U 1 1 5B203796
+P 5400 2150
+AR Path="/5B202D5B/5B203796" Ref="R21"  Part="1" 
+AR Path="/5B244EA6/5B203796" Ref="R22"  Part="1" 
+F 0 "R22" V 5550 2150 50  0000 C CNN
+F 1 "Rain" V 5400 2150 50  0000 C CNN
+F 2 "eforce_misc:R_0603_larger_pads" V 5330 2150 50  0001 C CNN
+F 3 "" H 5400 2150 50  0001 C CNN
+F 4 "ef" H 0   0   50  0001 C CNN "mpn"
+	1    5400 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0178
+U 1 1 5A5A2AFC
+P 4550 2450
+AR Path="/5B202D5B/5A5A2AFC" Ref="#PWR0178"  Part="1" 
+AR Path="/5B244EA6/5A5A2AFC" Ref="#PWR0179"  Part="1" 
+F 0 "#PWR0179" H 4550 2200 50  0001 C CNN
+F 1 "GND" H 4550 2300 50  0000 C CNN
+F 2 "" H 4550 2450 50  0001 C CNN
+F 3 "" H 4550 2450 50  0001 C CNN
+	1    4550 2450
+	1    0    0    -1  
+$EndComp
+Text HLabel 4550 1850 0    60   Input ~ 0
+PWR
+$Comp
+L eforce:D_x2_Serial_AKC D11
+U 1 1 5A5A607C
+P 4550 2150
+AR Path="/5B202D5B/5A5A607C" Ref="D11"  Part="1" 
+AR Path="/5B244EA6/5A5A607C" Ref="D12"  Part="1" 
+F 0 "D12" V 4650 2250 50  0000 L CNN
+F 1 "BAV99" V 4650 1800 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4550 2150 50  0001 C CNN
+F 3 "" H 4550 2150 50  0001 C CNN
+F 4 "BAV99" H 0   0   50  0001 C CNN "mpn"
+	1    4550 2150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4550 2150 5250 2150
+$Comp
+L Device:R R23
+U 1 1 5A5A6196
+P 4100 2150
+AR Path="/5B202D5B/5A5A6196" Ref="R23"  Part="1" 
+AR Path="/5B244EA6/5A5A6196" Ref="R24"  Part="1" 
+F 0 "R24" V 4000 2150 50  0000 C CNN
+F 1 "Rain2" V 4100 2150 50  0000 C CNN
+F 2 "eforce_misc:R_0603_larger_pads" V 4030 2150 50  0001 C CNN
+F 3 "" H 4100 2150 50  0001 C CNN
+F 4 "ef" H 0   0   50  0001 C CNN "mpn"
+	1    4100 2150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 2150 3900 2150
+Wire Wire Line
+	4250 2150 4550 2150
+Connection ~ 4550 2150
+$Comp
+L Device:C C67
+U 1 1 5A70875B
+P 3900 2350
+AR Path="/5B244EA6/5A70875B" Ref="C67"  Part="1" 
+AR Path="/5B202D5B/5A70875B" Ref="C66"  Part="1" 
+F 0 "C67" H 3800 2350 50  0000 R CNN
+F 1 "Cain" H 3850 2450 50  0000 R CNN
+F 2 "legacy:C_0402_1005Metric_legacy" H 3938 2200 50  0001 C CNN
+F 3 "" H 3900 2350 50  0001 C CNN
+F 4 "ef" H 0   0   50  0001 C CNN "mpn"
+	1    3900 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0186
+U 1 1 5A7087B3
+P 3900 2500
+AR Path="/5B202D5B/5A7087B3" Ref="#PWR0186"  Part="1" 
+AR Path="/5B244EA6/5A7087B3" Ref="#PWR0187"  Part="1" 
+F 0 "#PWR0187" H 3900 2250 50  0001 C CNN
+F 1 "GND" H 3900 2350 50  0000 C CNN
+F 2 "" H 3900 2500 50  0001 C CNN
+F 3 "" H 3900 2500 50  0001 C CNN
+	1    3900 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 2200 3900 2150
+Connection ~ 3900 2150
+Wire Wire Line
+	3900 2150 3850 2150
+$Comp
+L Connector_Generic_MountingPin:Conn_01x03_MountingPin J11
+U 1 1 5B270AD6
+P 6050 2150
+AR Path="/5B244EA6/5B270AD6" Ref="J11"  Part="1" 
+AR Path="/5B202D5B/5B270AD6" Ref="J10"  Part="1" 
+F 0 "J11" H 6200 2100 50  0000 C CNN
+F 1 "AIN" H 6200 2200 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53261-0371_1x03-1MP_P1.25mm_Horizontal" H 6050 2150 50  0001 C CNN
+F 3 "~" H 6050 2150 50  0001 C CNN
+F 4 "538-53261-0371" H 300 0   50  0001 C CNN "mpn"
+	1    6050 2150
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0206
+U 1 1 5B270C31
+P 6050 1850
+AR Path="/5B244EA6/5B270C31" Ref="#PWR0206"  Part="1" 
+AR Path="/5B202D5B/5B270C31" Ref="#PWR0205"  Part="1" 
+F 0 "#PWR0206" H 6050 1600 50  0001 C CNN
+F 1 "GND" H 6050 1700 50  0000 C CNN
+F 2 "" H 6050 1850 50  0001 C CNN
+F 3 "" H 6050 1850 50  0001 C CNN
+	1    6050 1850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C77
+U 1 1 5C8E881B
+P 5750 2550
+AR Path="/5B202D5B/5C8E881B" Ref="C77"  Part="1" 
+AR Path="/5B244EA6/5C8E881B" Ref="C78"  Part="1" 
+F 0 "C78" H 5650 2550 50  0000 R CNN
+F 1 "C" H 5700 2650 50  0000 R CNN
+F 2 "legacy:C_0402_1005Metric_legacy" H 5788 2400 50  0001 C CNN
+F 3 "" H 5750 2550 50  0001 C CNN
+F 4 "ef" H 1850 200 50  0001 C CNN "mpn"
+	1    5750 2550
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0210
+U 1 1 5C8E8821
+P 5750 2700
+AR Path="/5B202D5B/5C8E8821" Ref="#PWR0210"  Part="1" 
+AR Path="/5B244EA6/5C8E8821" Ref="#PWR0211"  Part="1" 
+F 0 "#PWR0211" H 5750 2450 50  0001 C CNN
+F 1 "GND" H 5750 2550 50  0000 C CNN
+F 2 "" H 5750 2700 50  0001 C CNN
+F 3 "" H 5750 2700 50  0001 C CNN
+	1    5750 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 2150 5850 2150
+Wire Wire Line
+	5850 2050 5750 2050
+Wire Wire Line
+	5750 2400 5750 2050
+Connection ~ 5750 2050
+Wire Wire Line
+	5750 2050 5550 2050
+$EndSCHEMATC

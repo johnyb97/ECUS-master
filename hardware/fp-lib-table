@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name eforce_misc)(type KiCad)(uri ${KIPRJMOD}/../../lib/eforce_misc.pretty)(options "")(descr ""))
+  (lib (name legacy)(type KiCad)(uri "$(KIPRJMOD)/legacy.pretty")(options "")(descr ""))
+)

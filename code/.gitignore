@@ -1,0 +1,9 @@
+*.o
+*.d
+*.hex
+*.elf
+*.log
+*.vscode
+testing/
+unused/
+doc/

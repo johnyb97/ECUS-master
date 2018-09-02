@@ -1,0 +1,195 @@
+#include "ili9806e.h"
+
+const uint8_t ili9806e_init_registers_P1 [][2]={
+  // {0x08, 0x10}, //Output    SDA 
+	{0x08, 0x18}, //SDI SDO
+	{0x20, 0x00}, //set DE/VSYNC mode = DE
+	{0x21, 0x03}, //DE = 1 Active 
+	{0x30, 0x02}, //Resolution setting 480 X 800 
+	{0x31, 0x02}, //Inversion setting 2-dot 
+	{0x3A, 0x70},      
+	{0x60, 0x07},       
+	{0x61, 0x00},        
+	{0x62, 0x08},      
+	{0x63, 0x00},      
+	{0x40, 0x18}, //BT  AVDD,AVDD
+	{0x41, 0x33},   
+	{0x42, 0x11},        
+	{0x43, 0x08},       
+	{0x44, 0x05},       
+	{0x46, 0x55},    
+	{0x47, 0x55},     
+	{0x50, 0x78}, //VREG1 
+	{0x51, 0x78}, //VREG2 
+	{0x52, 0x00}, //Flicker MSB 
+	{0x53, 0x60}, //Flicker LSB 
+	{0x57, 0x50},//LVD ·Åµç        
+	{0xA0, 0x00},  //Positive Gamma 
+	{0xA1, 0x0A},        // 
+	{0xA2, 0x11},        // 
+	{0xA3, 0x0C},        // 
+	{0xA4, 0x05},        // 
+	{0xA5, 0x09},        // 
+	{0xA6, 0x06},        // 
+	{0xA7, 0x05},        // 
+	{0xA8, 0x09},        // 
+	{0xA9, 0x0C},        // 
+	{0xAA, 0x11},        // 
+	{0xAB, 0x09},        // 
+	{0xAC, 0x0D},        // 
+	{0xAD, 0x19},        // 
+	{0xAE, 0x11},        // 
+	{0xAF, 0x00},        // 
+
+	{0xC0, 0x00},        //Negative Gamma 
+	{0xC1, 0x0A},        // 
+	{0xC2, 0x11},        // 
+	{0xC3, 0x0C},        // 
+	{0xC4, 0x05},        // 
+	{0xC5, 0x09},        // 
+	{0xC6, 0x06},        // 
+	{0xC7, 0x05},        // 
+	{0xC8, 0x09},        // 
+	{0xC9, 0x0C},        // 
+	{0xCA, 0x11},        // 
+	{0xCB, 0x09},        // 
+	{0xCC, 0x0D},        // 
+	{0xCD, 0x19},        // 
+	{0xCE, 0x11},        // 
+	{0xCF, 0x00},        // 
+};
+
+const uint8_t ili9806e_init_registers_P6 [][2]={
+	{0x00, 0x21},        // 
+	{0x01, 0x0A},        // 
+	{0x02, 0x00},        // 
+	{0x03, 0x00},        // 
+	{0x04, 0x05},        // 
+	{0x05, 0x05},        // 
+	{0x06, 0x80},        // 
+	{0x07, 0x06},        // 
+	{0x08, 0x01},        // 
+	{0x09, 0x00},        // 
+	{0x0A, 0x00},        // 
+	{0x0B, 0x00},        // 
+	{0x0C, 0x06},        // 
+	{0x0D, 0x06},        // 
+	{0x0E, 0x00},        // 
+	{0x0F, 0x00},        // 
+
+	{0x10, 0xf0},        // 
+	{0x11, 0xf4},        // 
+	{0x12, 0x03},        // 
+	{0x13, 0x00},        // 
+	{0x14, 0x00},        // 
+	{0x15, 0xC0},        // 
+	{0x16, 0x08},        // 
+	{0x17, 0x00},        // 
+	{0x18, 0x00},        // 
+	{0x19, 0x00},        // 
+	{0x1A, 0x00},        // 
+	{0x1B, 0x00},        // 
+	{0x1C, 0x00},        // 
+	{0x1D, 0x00},        // 
+
+	{0x20, 0x01},        // 
+	{0x21, 0x23},        // 
+	{0x22, 0x45},        // 
+	{0x23, 0x67},        // 
+	{0x24, 0x01},        // 
+	{0x25, 0x23},        // 
+	{0x26, 0x45},        // 
+	{0x27, 0x67},        // 
+
+	{0x30, 0x01},        // 
+	{0x31, 0x11},        // 
+	{0x32, 0x00},        // 
+	{0x33, 0xee},        // 
+	{0x34, 0xff},        // 
+	{0x35, 0xcb},        // 
+	{0x36, 0xda},        // 
+	{0x37, 0xad},        // 
+	{0x38, 0xbc},        // 
+	{0x39, 0x76},        // 
+	{0x3A, 0x67},        // 
+	{0x3B, 0x22},        // 
+	{0x3C, 0x22},        // 
+	{0x3D, 0x22},        // 
+	{0x3E, 0x22},        // 
+	{0x3F, 0x22},        // 
+	{0x40, 0x22},        // 
+	{0x52, 0x10},        // 
+	{0x53, 0x10},        // 
+	{0x54, 0x13},        // 
+};
+
+
+const uint8_t ili9806e_init_registers_P7 [][2]={
+	{0x17, 0x22},        // 
+	{0x18, 0x1d},        // 
+	{0x02, 0x77},        // 
+	{0xE1, 0x79},        // 
+	{0xb3, 0x10},        // 
+};
+
+const uint8_t cmd_slpout = CMD_P0_SLPOUT;
+// delay(120);
+const uint8_t cmd_dispon = CMD_P0_DISPON;
+// delay(25);
+const uint8_t cmd_UNKNOWN = 0x2C;
+
+
+
+
+void ili9806e_send_cmd(struct ili9806e_handle *IL, const uint8_t *data, const uint8_t length)
+{
+	IL->spi_start(IL->spi);
+	uint8_t idx=0;
+	IL->spi_write(data[idx++], 9);
+	for(; idx<length; idx++)
+	{
+		IL->spi_write((1<<8)|data[idx], 9);
+	}
+	IL->spi_end();
+}
+
+
+
+void ili9806e_select_page(struct ili9806e_handle *IL, const uint8_t page)
+{
+	uint8_t cmd[]={CMD_ENEXTC,0xFF,0x98,0x06,0x04,page};
+	ili9806e_send_cmd(IL, cmd, 6);
+}
+
+void ili9806e_init(struct ili9806e_handle *IL)
+{
+	IL->lcd_reset();
+
+	ili9806e_select_page(IL, 1);
+	for (uint8_t i = 0; i < array_length(ili9806e_init_registers_P1); ++i)
+	{
+		ili9806e_send_cmd(IL, ili9806e_init_registers_P1[i], 2);
+	}
+
+	ili9806e_select_page(IL, 6);
+	for (uint8_t i = 0; i < array_length(ili9806e_init_registers_P6); ++i)
+	{
+		ili9806e_send_cmd(IL, ili9806e_init_registers_P6[i], 2);
+	}
+
+	ili9806e_select_page(IL, 7);
+	for (uint8_t i = 0; i < array_length(ili9806e_init_registers_P7); ++i)
+	{
+		ili9806e_send_cmd(IL, ili9806e_init_registers_P7[i], 2);
+	}
+
+	ili9806e_select_page(IL, 0);
+	ili9806e_send_cmd(IL, &cmd_slpout, 1);
+	delay_ms(200);
+	ili9806e_send_cmd(IL, &cmd_dispon, 1);
+	delay_ms(200);
+	ili9806e_send_cmd(IL, &cmd_UNKNOWN, 1);
+
+
+
+}
